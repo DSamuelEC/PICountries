@@ -25,10 +25,10 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    poblation: {
+    population: {
       type: DataTypes.INTEGER,
       allowNull: false
-    },
+    }
   },
   {
     timestamps: false
