@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import Countries from "../../components/countries/Countries";
+import NavBar from "../../components/navbar/NavBar";
 import { getCountries } from "../../redux/actions";
 
 const Home = () => {
@@ -9,11 +10,12 @@ const Home = () => {
 
     useEffect(() => {
         dispatch(getCountries())
-    },[])
+    }, [])
 
-    return(
+    return (
         <div>
-            <Countries/>
+            <NavBar />
+            <Countries />
         </div>
     )
 

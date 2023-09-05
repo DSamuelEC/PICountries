@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
-const Country = ({ id, flag, name, continent, activities }) => {
-    console.log(activities)
+const Country = ({ id, flag, name, continent }) => {
+    //puedo traer por parametros las actividades y filtrarlas tambien
     return (
         <div>
             <h3>{name}</h3>

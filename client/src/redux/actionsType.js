@@ -1,3 +1,4 @@
 export const GET_COUNTRIES = 'GET_COUNTRIES';
 export const GET_COUNTRY_ID = 'GET_COUNTRY_ID';
 export const CLEAN_DETAIL = 'CLEAN_DETAIL';
+export const GET_COUNTRIES_NAME = 'GET_COUNTRIES_NAME';

@@ -1,7 +1,8 @@
 import {
     GET_COUNTRIES,
     GET_COUNTRY_ID,
-    CLEAN_DETAIL
+    CLEAN_DETAIL,
+    GET_COUNTRIES_NAME
 } from "./actionsType";
 
 const initialState = {
@@ -25,6 +26,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 country: {}
+            }
+        case GET_COUNTRIES_NAME:
+            return {
+                ...state,
+                allCountries: action.payload
             }
         default:
             return {

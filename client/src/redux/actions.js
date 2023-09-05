@@ -2,7 +2,8 @@ import axios from 'axios';
 import {
     GET_COUNTRIES,
     GET_COUNTRY_ID,
-    CLEAN_DETAIL
+    CLEAN_DETAIL,
+    GET_COUNTRIES_NAME
 } from "./actionsType";
 
 export const getCountries = () => {
@@ -25,8 +26,18 @@ export const getCountryId = (id) => {
     }
 };
 
-export const cleanDetail = () =>{
+export const cleanDetail = () => {
     return {
         type: CLEAN_DETAIL
+    }
+};
+
+export const getCountryName = (name) => {
+    return async function (dispatch) {
+        const countryPerName = await axios(`http://localhost:3001/countries/?name=${name}`)
+        return dispatch({
+            type: GET_COUNTRIES_NAME,
+            payload: countryPerName.data
+        })
     }
 };
