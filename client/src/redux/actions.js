@@ -3,7 +3,10 @@ import {
     GET_COUNTRIES,
     GET_COUNTRY_ID,
     CLEAN_DETAIL,
-    GET_COUNTRIES_NAME
+    GET_COUNTRIES_NAME,
+    SET_PAGE,
+    FILTERS_CONTINENT,
+    RESET_ALL
 } from "./actionsType";
 
 export const getCountries = () => {
@@ -39,5 +42,25 @@ export const getCountryName = (name) => {
             type: GET_COUNTRIES_NAME,
             payload: countryPerName.data
         })
+    }
+};
+
+export const setPage = (payload) => {
+    return {
+        type: SET_PAGE,
+        payload
+    }
+};
+
+export const filterContinent = (payload) => {
+    return {
+        type: FILTERS_CONTINENT,
+        payload
+    }
+};
+
+export const resetAll = () => {
+    return {
+        type: RESET_ALL
     }
 };

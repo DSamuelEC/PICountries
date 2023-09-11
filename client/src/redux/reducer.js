@@ -2,12 +2,17 @@ import {
     GET_COUNTRIES,
     GET_COUNTRY_ID,
     CLEAN_DETAIL,
-    GET_COUNTRIES_NAME
+    GET_COUNTRIES_NAME,
+    SET_PAGE,
+    FILTERS_CONTINENT,
+    RESET_ALL
 } from "./actionsType";
 
 const initialState = {
     allCountries: [],
-    country: {}
+    country: {},
+    page: 0,
+    filterByContinent: ''
 };
 
 const reducer = (state = initialState, action) => {
@@ -31,6 +36,22 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 allCountries: action.payload
+            }
+        case SET_PAGE:
+            return {
+                ...state,
+                page: action.payload
+            }
+        case FILTERS_CONTINENT:
+            return {
+                ...state,
+                filterByContinent: action.payload
+            }
+        case RESET_ALL:
+            return{
+                ...state,
+                page: 0,
+                filterByContinent: ''
             }
         default:
             return {

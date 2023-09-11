@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import Countries from "../../components/countries/Countries";
 import NavBar from "../../components/navbar/NavBar";
 import { getCountries } from "../../redux/actions";
+import FiltersAndSorts from "../../components/filtersAndSorts/FiltersAndSorts";
 
 const Home = () => {
     const dispatch = useDispatch()
@@ -15,6 +16,9 @@ const Home = () => {
     return (
         <div>
             <NavBar />
+            <hr />
+            <FiltersAndSorts />
+            <hr />
             <Countries />
         </div>
     )

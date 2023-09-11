@@ -9,7 +9,7 @@ server.listen(PORT, () => {
 })
 }).catch(error => console.error(error))*/
 
-conn.sync({ alter: true })
+conn.sync({ alter:true })
     .then(() => {
         server.listen(PORT, async () => {
             const countries = await Country.findAll()

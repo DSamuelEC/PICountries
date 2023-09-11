@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { getCountries } from "../../redux/actions";
+import { resetAll } from "../../redux/actions";
 import SearchBar from "../searchbar/SearchBar";
 
 const NavBar = () => {
     const dispatch = useDispatch();
 
     const handlerReset = () => {
-        dispatch(getCountries())
+        dispatch(resetAll())
     };
 
     return (
