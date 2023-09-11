@@ -6,7 +6,11 @@ import {
     GET_COUNTRIES_NAME,
     SET_PAGE,
     FILTERS_CONTINENT,
-    RESET_ALL
+    RESET_ALL,
+    GET_ACTIVITIES,
+    FILTER_ACTIVITIES,
+    SORT_NAME,
+    SORT_POPULATION
 } from "./actionsType";
 
 export const getCountries = () => {
@@ -15,6 +19,16 @@ export const getCountries = () => {
         return dispatch({
             type: GET_COUNTRIES,
             payload: allCountries.data
+        })
+    }
+};
+
+export const getActivities = () => {
+    return async function (dispatch) {
+        const allActivities = await axios('http://localhost:3001/activities')
+        return dispatch({
+            type: GET_ACTIVITIES,
+            payload: allActivities.data
         })
     }
 };
@@ -55,6 +69,27 @@ export const setPage = (payload) => {
 export const filterContinent = (payload) => {
     return {
         type: FILTERS_CONTINENT,
+        payload
+    }
+};
+
+export const filterActivities = (payload) => {
+    return {
+        type: FILTER_ACTIVITIES,
+        payload
+    }
+};
+
+export const sortName = (payload) => {
+    return {
+        type: SORT_NAME,
+        payload
+    }
+};
+
+export const sortPopulation = (payload) => {
+    return {
+        type: SORT_POPULATION,
         payload
     }
 };

@@ -6,14 +6,22 @@ import { setPage } from '../../redux/actions';
 import { helper } from '../../helpers/helpers';
 
 const Countries = () => {
-    const { allCountries, page, filterByContinent } = useSelector((state) => state);
+    const { 
+        allCountries, 
+        page, 
+        filterByContinent, 
+        filterByActivities, 
+        sortByName,
+        sortByPopulation
+    } = useSelector((state) => state);
+
     const [nations, setNations] = useState([...allCountries]);
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        const data = helper(allCountries, filterByContinent);
+        const data = helper(allCountries, filterByContinent, filterByActivities, sortByName, sortByPopulation);
         setNations(data);
-    },[allCountries, filterByContinent]);
+    },[allCountries, filterByContinent, filterByActivities, sortByName, sortByPopulation]);
 
     const nextPage = () => {
         dispatch(setPage(page + 1));

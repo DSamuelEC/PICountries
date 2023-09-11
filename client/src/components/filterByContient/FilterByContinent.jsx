@@ -2,8 +2,8 @@ import { useDispatch } from "react-redux";
 
 import { filterContinent, setPage } from '../../redux/actions.js'
 
-const FiltersByContinent = () => {
-    const dispatch = useDispatch()
+const FilterByContinent = () => {
+    const dispatch = useDispatch();
 
     const handlerContinent = (event) => {
         dispatch(filterContinent(event.target.value))
@@ -24,4 +24,4 @@ const FiltersByContinent = () => {
     )
 };
 
-export default FiltersByContinent;
+export default FilterByContinent;

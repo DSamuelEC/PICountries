@@ -3,16 +3,17 @@ import { useDispatch } from "react-redux";
 
 import Countries from "../../components/countries/Countries";
 import NavBar from "../../components/navbar/NavBar";
-import { getCountries } from "../../redux/actions";
+import { getActivities, getCountries } from "../../redux/actions";
 import FiltersAndSorts from "../../components/filtersAndSorts/FiltersAndSorts";
 
 const Home = () => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getCountries())
+        dispatch(getCountries());
+        dispatch(getActivities());
     }, [])
-
+    
     return (
         <div>
             <NavBar />

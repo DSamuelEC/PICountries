@@ -1,9 +1,18 @@
-import FiltersByContinent from "../filterByContient/FilterByContinent";
+import FilterByActivities from "../filterByActivities/FilterByActivities";
+import FilterByContinent from "../filterByContient/FilterByContinent";
+import SortByName from "../sortByName/SortByName";
+import SortByPopulation from "../sortByPopulation/SortByPopulation";
 
 const FiltersAndSorts = () => {
 
     return (
-        <FiltersByContinent />
+        <div>
+            <FilterByContinent />
+            <FilterByActivities />
+            <h4>Sort: </h4>
+            <SortByName />
+            <SortByPopulation />
+        </div>
     )
 };
 
