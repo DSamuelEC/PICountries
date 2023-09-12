@@ -3,7 +3,7 @@ const { Op } = require('sequelize');
 
 const postActivities = async (req, res) => {
     try {
-        const { name, difficulty, season, countryName } = req.body;
+        const { name, difficulty, season, countryName } = req.body
         if (!name || !difficulty || !season || !countryName) return res.status(404).json({ error: 'Please fill all the inputs and add countries to the activity' });
 
         const activityInDb = await Activity.findOne({
@@ -33,8 +33,7 @@ const postActivities = async (req, res) => {
 
         if (activitySearchDb) return res.status(200).json({ message: 'Activity successfully created' })
     } catch (error) {
-        //return res.status(500).json({ error: 'There was a problem creating the Activity' })
-        return res.status(500).json(error)
+        return res.status(500).json({ error: 'There was a problem creating the Activity' })
     };
 };
 

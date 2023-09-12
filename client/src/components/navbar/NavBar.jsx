@@ -23,6 +23,10 @@ const NavBar = () => {
 
             <SearchBar />
 
+            <Link to='/create'>
+                <h3>CREATE ACTIVITY</h3>
+            </Link>
+
         </div>
     )
 };
