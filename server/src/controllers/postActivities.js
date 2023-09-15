@@ -4,7 +4,8 @@ const { Op } = require('sequelize');
 const postActivities = async (req, res) => {
     try {
         const { name, difficulty, season, countryName } = req.body
-        if (!name || !difficulty || !season || !countryName) return res.status(404).json({ error: 'Please fill all the inputs and add countries to the activity' });
+        if (!name || !difficulty || !season || !countryName) return res.status(404)
+        .json({ error: 'Please fill all the inputs and add countries to the activity' });
 
         const activityInDb = await Activity.findOne({
             where: {
