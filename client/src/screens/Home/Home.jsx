@@ -6,6 +6,8 @@ import NavBar from "../../components/navbar/NavBar";
 import { getActivities, getCountries } from "../../redux/actions";
 import FiltersAndSorts from "../../components/filtersAndSorts/FiltersAndSorts";
 
+import './Home.styles.css'
+
 const Home = () => {
     const dispatch = useDispatch();
 
@@ -15,7 +17,7 @@ const Home = () => {
     }, [])
     
     return (
-        <div>
+        <div className="container">
             <NavBar />
             <hr />
             <FiltersAndSorts />
